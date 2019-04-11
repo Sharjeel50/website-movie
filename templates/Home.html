@@ -9,10 +9,21 @@
 {% block Body %}
   {% for movie in LoopMovies %}
     <div class="card">
-      <div class="Container">
+      <a href="Movie/{{ movie.ID }}"><h5> {{ movie.Title }} </h5></a>
+      <div class="container">
         <a href="Movie/{{ movie.ID }}"><img src= {{ movie.Image }}></a>
-        <a href="Movie/{{ movie.ID }}"><h5> {{ movie.Title }} </h5></a>
       </div>
     </div>
   {% endfor %}
+
+
+
+
+
+
+
+
+
+
+
 {% endblock %}

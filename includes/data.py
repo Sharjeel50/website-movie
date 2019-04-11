@@ -13,31 +13,31 @@ def SeriesData():
 def MovieData():
 
     with open('includes/MovieData.json','r') as f:
-        Data = json.loads(f)
+        Data = json.loads(f.read())
 
     Movies = []
 
-    for i in range:
+    for i in range(100):
         MovieDataDict = {
                             'Title': Data[i]['Title'],
-                            'ID': Data[i]['_id'],
-                            'IMDb_ID': Data[i]['imdb_id'],
-                            'Year': Data[i]['year'],
-                            'MovieInfo': Data[i]['synopsis'],
-                            'Genres': Data[i]['genres'][:],
-                            'Certification': Data[i]['certification'],
-                            'Percentage': Data[i]['rating']['percentage'],
-                            'Votes': Data[i]['rating']['votes'],
-                            'Watching': Data[i]['rating']['watching'],
-                            '1080p': Data[i]['torrents']['en']['1080p']['url'],
-                            'Filesize-1080p': Data[i]['torrents']['en']['1080p']['filesize'],
-                            'Peer-1080p': Data[i]['torrents']['en']['1080p']['peer'],
-                            'Seed-1080p': Data[i]['torrents']['en']['1080p']['seed'],
-                            '720p': Data[i]['torrents']['en']['720p']['url'],
-                            'Filesize-720p': Data[i]['torrents']['en']['720p']['filesize'],
-                            'Peer-720p': Data[i]['torrents']['en']['720p']['peer'],
-                            'Seed-720p': Data[i]['torrents']['en']['720p']['seed'],
-                            'Image': Data[i]['images']['poster']
+                            'ID': Data[i]['ID'],
+                            'IMDb_ID': Data[i]['IMDb_ID'],
+                            'Year': Data[i]['Year'],
+                            'MovieInfo': Data[i]['MovieInfo'],
+                            'Genres': Data[i]['Genres'],
+                            'Certification': Data[i]['Certification'],
+                            'Percentage': Data[i]['Percentage'],
+                            'Votes': Data[i]['Votes'],
+                            'Watching': Data[i]['Watching'],
+                            'TenEighty': Data[i]['1080p'],
+                            'Filesize-1080p': Data[i]['Filesize-1080p'],
+                            'Peer-1080p': Data[i]['Peer-1080p'],
+                            'Seed-1080p': Data[i]['Seed-1080p'],
+                            'SevenTwenty': Data[i]['720p'],
+                            'Filesize-720p': Data[i]['Filesize-720p'],
+                            'Peer-720p': Data[i]['Peer-720p'],
+                            'Seed-720p': Data[i]['Seed-720p'],
+                            'Image': Data[i]['Image']
                         }
 
         Movies.append(MovieDataDict)
