@@ -1,0 +1,18 @@
+{% extends 'Parent.html' %}
+<!--
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='Css/base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='Css/Home.css') }}">
+{% endblock %} -->
+
+
+{% block Body %}
+  {% for movie in LoopMovies %}
+    <div class="card">
+      <div class="Container">
+        <a href="Movie/{{ movie.ID }}"><img src= {{ movie.Image }}></a>
+        <a href="Movie/{{ movie.ID }}"><h5> {{ movie.Title }} </h5></a>
+      </div>
+    </div>
+  {% endfor %}
+{% endblock %}
