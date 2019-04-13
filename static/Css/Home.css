@@ -1,4 +1,19 @@
 img {
-  height: 50%;
-  width: 50%;
+  height: 70%;
+  width: 70%
+}
+
+.MainContainer {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 2em;
+}
+
+.Card a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.MoviesContainer {
+  border: black 1px solid;
 }
