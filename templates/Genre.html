@@ -1,5 +1,9 @@
 {% extends 'Parent.html' %}
 
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='Css/genre.css') }}">
+{% endblock %}]
 
 {% block Body %}
 
@@ -16,11 +20,5 @@
       {% endfor %}
    </div>
 </div>
-
-
-
-
-
-
 
 {% endblock %}

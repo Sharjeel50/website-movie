@@ -3,7 +3,7 @@
   <head>
     {% block head %}
       <link rel="stylesheet" href = "{{ url_for('static', filename='Css/base.css') }}">
-      <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet">
       <meta charset="utf-8">
       <title>PineFlix - {% block title %}{% endblock %}</title>
     {% endblock %}
@@ -18,6 +18,8 @@
         <li><a href="#">Series</a></li>
         <li><a href="#">Genres</a></li>
         <li><a href="#">Contact Us</a></li> <!-- have about in contact us page -->
+        <li><a href="#">Login</a></li>
+        <li><a href="#">Register</a></li>
       </ul>
       <div class="genres">
         <li><a href="Genre/action">Action</a></li>

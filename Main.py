@@ -16,7 +16,6 @@ def Home():
 
     return render_template('Home.html', LoopMovies = testMovies) # Running function to get movie data nad need to make sure i loop through series to display them too
 
-
 @app.route('/Movies')
 def Movies():
     return render_template('Movies.html', LoopMovies = MovieData()) # Running function to get movie data

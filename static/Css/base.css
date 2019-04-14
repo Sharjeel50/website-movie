@@ -8,30 +8,42 @@ nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  min-height: 8vh;
-  background-color: darkgrey;
-  font-family: 'Slabo 27px', serif;
+  min-height: 1vh;
+  background-color: #303844;
+  font-size: 13px;
+}
+
+.logo a {
+  color: white;
+  letter-spacing: 3px;
+  font-size: 30px;
+  text-decoration: none;]
+
 }
 
 .logo {
-  color: white;
-  letter-spacing: 3px;
-  font-size: 15px;
-  text-decoration: none;
+  font-family: 'Exo 2', sans-serif;
 }
 
 .nav-links {
   display: flex;
   width: 20;
   justify-content: space-around;
-}
-
-.nav-links li {
-  list-style: none;
-}
-
-.nav-links {
   color: white;
   text-decoration: none;
   letter-spacing: 2;
+}
+
+.nav-links li {
+  text-decoration: none;
+  list-style-type: none;
+  margin-left: 20px;
+  font-family: 'Exo 2', sans-serif;
+  color: white;
+}
+
+.nav-links a {
+  text-decoration: none;
+  justify-content: space-around;
+  color: white;
 }
