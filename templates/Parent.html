@@ -18,11 +18,11 @@
         <li><a href="#">Series</a></li>
         <li><a href="#">Genres</a></li>
         <li><a href="#">Contact Us</a></li> <!-- have about in contact us page -->
-        <li><a href="#">Login</a></li>
-        <li><a href="#">Register</a></li>
+        <li><a href="{{ url_for('Login') }}">Login</a></li>
+        <li><a href="{{ url_for('Register') }}">Register</a></li>
       </ul>
       <div class="genres">
-        <li><a href="Genre/action">Action</a></li>
+        <li><a href="/Genre/action">Action</a></li>
         <li><a href="Genre/romance">Romance</a></li>
         <li><a href="Genre/comedy">Comedy</a></li>
         <li><a href="Genre/adventure">Adventure</a></li>
