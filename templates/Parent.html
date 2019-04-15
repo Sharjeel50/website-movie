@@ -14,15 +14,15 @@
         <h4><a href="{{ url_for('Home') }}"> PineFlix </a></h4>
       </div>
       <ul class="nav-links">
-        <li><a href="#">Movies</a></li>
-        <li><a href="#">Series</a></li>
+        <li><a href="{{ url_for('Movies') }}">Movies</a></li>
+        <li><a href="{{ url_for('Series') }}">Series</a></li>
         <li><a href="#">Genres</a></li>
-        <li><a href="#">Contact Us</a></li> <!-- have about in contact us page -->
+        <li><a href="{{ url_for('Contactus') }}">Contact Us</a></li>         <!-- have about in contact us page -->
         <li><a href="{{ url_for('Login') }}">Login</a></li>
         <li><a href="{{ url_for('Register') }}">Register</a></li>
       </ul>
       <div class="genres">
-        <li><a href="/Genre/action">Action</a></li>
+        <li><a href="{{ url_for('Genre', genre = 'action') }}">Action</a></li>
         <li><a href="Genre/romance">Romance</a></li>
         <li><a href="Genre/comedy">Comedy</a></li>
         <li><a href="Genre/adventure">Adventure</a></li>

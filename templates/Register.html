@@ -11,10 +11,10 @@
 
 <div class="container">
   <form class="" action="" method="post">
-    {{ form.hidden_tag() }}
     {{ wtf.form_field(form.username) }}
     {{ wtf.form_field(form.email) }}
     {{ wtf.form_field(form.password) }}
+    {{ wtf.form_field(form.confirm) }}
     <button type="submit"> Register </button>
   </form>
 </div>
