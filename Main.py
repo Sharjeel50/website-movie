@@ -2,9 +2,10 @@ import os
 import json
 import hashlib
 import requests
-from flask import Flask, render_template, url_for, request
+from flask import Flask, render_template, url_for, request, redirect
 from includes.data import MovieData, SeriesData
-from wtforms import StringField, PasswordField, BooleanField, validators, Form
+from wtforms import StringField, PasswordField, BooleanField, validators
+from flask_wtf import Form
 from wtforms.validators import InputRequired, Email, Length
 from flask_bootstrap import Bootstrap
 from flask_pymongo import PyMongo
@@ -13,7 +14,7 @@ app = Flask(__name__)
 app.static_folder = 'static'
 
 app.config["MONGO_URI"] = "mongodb://localhost:27017/Users"
-mongo = PyMongo(app)
+mongodb = PyMongo(app)
 
 SECRET_KEY = os.urandom(32)
 app.config['SECRET_KEY'] = SECRET_KEY
@@ -67,7 +68,7 @@ def Series():
 # Individual Movie Page
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-@app.route('/Movie/<genre>/') # To fix once the user clicks on next button to
+@app.route('/Movie/<string:id>/') # To fix once the user clicks on next button to
 def Movie(id):
     Data = MovieData()
     for i in range(50):
@@ -109,23 +110,23 @@ def Login():
 class RegisterFrom(Form):
     username = StringField('Username', validators = [InputRequired(), Length(min = 4, max = 15)])
     email = StringField('Email', validators = [InputRequired(), Email(message = 'Invalid Email'), Length(max = 30)])
-    password = StringField('Password', validators = [InputRequired(), PasswordField('Password', [
-        validators.DataRequired(),
-        validators.EqualTo('Confirm', message = "Passwords do not match")]),Length(min = 6, max = 15)])
+    password = StringField('Password', validators = [InputRequired(), PasswordField('Password', [validators.DataRequired(), validators.EqualTo('Confirm', message = "Passwords do not match")]),Length(min = 6, max = 15)])
     confirm = PasswordField('Confirm Password')
 
 @app.route("/Register", methods = ['GET', 'POST'])
 def Register():
     usersDatabase = mongodb.db.Users
     form = RegisterFrom(request.form)
-    if request.method == 'POST' and form.validate() and usersDatabase.find_one({'Username': form.username.data}) is None:
+    if request.method == 'POST' and form.validate_on_submit():
         username = form.username.data
         email = form.email.data
         password = hashlib.sha256(form.password.data.encode('utf-8')).hexdigest()
         usersDatabase.insert({'Username': username, 'Email': email, 'Password': password})
 
+        print("User Added to database")
 
-        return render_template('Register.html', form = form)  # Need to add to database if user does not exists within it
+        return redirect(url_for('Home'))
+
     return render_template('Register.html', form = form)
 
        # if mongo.db.users.find_one({'username': request.form['Username']}) is None:
@@ -145,8 +146,8 @@ class Contact_Us(Form):
 @app.route('/ContactUs', methods = ['GET', 'POST'])
 def Contactus():
     form = RegisterFrom(request.form)
-    if request.method = 'POST' and form.validate():
-        return render_template('ContactUs.html', form = form)
+    # if request.method = 'POST' and form.validate():
+    #     return render_template('ContactUs.html', form = form)
     return render_template('ContactUs.html', form = form)
 
 
