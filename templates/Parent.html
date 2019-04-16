@@ -1,42 +1,67 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    {% block head %}
-      <link rel="stylesheet" href = "{{ url_for('static', filename='Css/base.css') }}">
-      <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet">
-      <meta charset="utf-8">
-      <title>PineFlix - {% block title %}{% endblock %}</title>
-    {% endblock %}
-  </head>
-  <body>
-    <nav>
-      <div class="logo">
-        <h4><a href="{{ url_for('Home') }}"> PineFlix </a></h4>
-      </div>
-      <ul class="nav-links">
-        <li><a href="{{ url_for('Movies') }}">Movies</a></li>
-        <li><a href="{{ url_for('Series') }}">Series</a></li>
-        <li><a href="#">Genres</a></li>
-        <li><a href="{{ url_for('Contactus') }}">Contact Us</a></li>         <!-- have about in contact us page -->
-        <li><a href="{{ url_for('Login') }}">Login</a></li>
-        <li><a href="{{ url_for('Register') }}">Register</a></li>
-      </ul>
-      <div class="genres">
-        <li><a href="Genre/action">Action</a></li>
-        <li><a href="Genre/romance">Romance</a></li>
-        <li><a href="Genre/comedy">Comedy</a></li>
-        <li><a href="Genre/adventure">Adventure</a></li>
-        <li><a href="Genre/science-fiction">Science fiction</a></li>
-        <li><a href="Genre/superhero">Superhero</a></li>
-        <li><a href="Genre/family">Family</a></li>
-        <li><a href="Genre/thriller">Thriller</a></li>
-        <li><a href="Genre/war">War</a></li>
-        <li><a href="Genre/fantasy">Fantasy</a></li>
-        <li><a href="Genre/crime">Crime</a></li>
-        <li><a href="Genre/drama">Drama</a></li>
-        <li><a href="Genre/history">History</a></li>
-      </div>
-    </nav>
-    {% block Body %}{% endblock %}
-  </body>
+   <head>
+      {% block head %}
+        <link rel="stylesheet" href = "{{ url_for('static', filename='Css/base.css') }}">
+        <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <meta charset="utf-8">
+        <title>PineFlix - {% block title %}{% endblock %}</title>
+      {% endblock %}
+   </head>
+   <body>
+      <nav>
+         <div class="logo">
+            <h4><a href="{{ url_for('Home') }}"> PineFlix </a></h4>
+         </div>
+         <ul class="nav-links">
+            <li><a href="{{ url_for('Movies') }}">Movies</a></li>
+            <li><a href="{{ url_for('Series') }}">Series</a></li>
+            <li><a href="#">Genres</a></li>
+            <li><a href="{{ url_for('Contactus') }}">Contact Us</a></li>
+            <!-- have about in contact us page -->
+            <li><a href="{{ url_for('Login') }}">Login</a></li>
+            <li><a href="{{ url_for('Register') }}">Register</a></li>
+
+            <!-- <li><button type="button" data-toggle="modal" data-target="#exampleModal"> Register </button></li> -->
+         </ul>
+         <div class="genres">
+            <li><a href="Genre/action">Action</a></li>
+            <li><a href="Genre/romance">Romance</a></li>
+            <li><a href="Genre/comedy">Comedy</a></li>
+            <li><a href="Genre/adventure">Adventure</a></li>
+            <li><a href="Genre/science-fiction">Science fiction</a></li>
+            <li><a href="Genre/superhero">Superhero</a></li>
+            <li><a href="Genre/family">Family</a></li>
+            <li><a href="Genre/thriller">Thriller</a></li>
+            <li><a href="Genre/war">War</a></li>
+            <li><a href="Genre/fantasy">Fantasy</a></li>
+            <li><a href="Genre/crime">Crime</a></li>
+            <li><a href="Genre/drama">Drama</a></li>
+            <li><a href="Genre/history">History</a></li>
+         </div>
+      </nav>
+      <!-- Register Modal -->
+      <!-- <div class="modal" tabindex="-1" role="dialog">
+         <div class="modal-dialog" role="document">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <h5 class="modal-title">Register</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                  </button>
+               </div>
+               <div class="modal-body">
+                  <p>Modal body text goes here.</p>
+               </div>
+               <div class="modal-footer">
+                  <button type="button" class="btn btn-primary">Register</button>
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+               </div>
+            </div>
+         </div>
+      </div> -->
+      {% block Body %}{% endblock %}
+   </body>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </html>
