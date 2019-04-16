@@ -23,4 +23,3 @@ def MovieData():
         Data = json.loads(f.read())
 
     return Data
-

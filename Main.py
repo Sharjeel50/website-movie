@@ -74,6 +74,7 @@ def Movie(id):
     for i in range(50):
         if Data[i]['ID'] == str(id):
             Movie = Data[i]
+            print(Movie)
 
     return render_template('Movie.html', Movie = Movie) # Running function to get movie data
 
