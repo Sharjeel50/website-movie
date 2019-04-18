@@ -30,7 +30,7 @@ bootstrap = Bootstrap(app)
 def Home():
     Data = MovieData()
     testMovies = []
-    for i in range(50):
+    for i in range(12):
         testMovies.append(Data[i])
 
     return render_template('Home.html', LoopMovies = testMovies) # Running function to get movie data nad need to make sure i loop through series to display them too

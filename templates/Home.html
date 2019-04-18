@@ -1,29 +1,31 @@
 {% extends 'Parent.html' %}
 
 {% block head %}
-    {{ super() }}
-    <link rel="stylesheet" href="{{ url_for('static', filename='Css/Home.css') }}">
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='Css/Home.css') }}">
 {% endblock %}]
 
 {% block title %} Home {% endblock %}
 
-
-
-
-
 {% block Body %}
-
-<div class="MoviesContainer">
-   <div class="MainContainer">
-      {% for movie in LoopMovies %}
-      <div class="CardContainer">
-         <div class="Card">
+<div class="wrapper">
+  <h4>Trending</h4>
+  <div class="MainContainer">
+     {% for movie in LoopMovies %}
+     <div class="CardContainer">
+        <div class="Card">
            <a href="{{ url_for('Movie', id=movie.ID) }}"> <img src="{{ movie.Image }}" alt=""></a>
-            <a href="{{ url_for('Movie', id = movie.ID) }}"><h5> {{ movie.Title }} </h5></a>
-         </div>
-      </div>
-      {% endfor %}
-   </div>
-</div>
+           <a href="{{ url_for('Movie', id = movie.ID) }}">
+             <p>{{ movie.Title }}</p>
+           </a>
+        </div>
+     </div>
+     {% endfor %}
+  </div>
+
+  <!-- <div class="newContainer">
+    <p>this cointains news from "the movie database API"</p>
+  </div>
+</div> -->
 
 {% endblock %}
