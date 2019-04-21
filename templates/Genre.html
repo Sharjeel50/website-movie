@@ -6,19 +6,19 @@
 {% endblock %}]
 
 {% block Body %}
-
-<div class="MoviesContainer">
-   <div class="MainContainer">
-      {% for movie in ChoseGenre %}
-      <div class="CardContainer">
-         <div class="Card">
-            <a href="Movie/{{ movie.ID }}"><img src={{ movie.Image }}></a>
-            <a href="Movie/{{ movie.ID }}"><h5> {{ movie.Title }} </h5></a>
-            <p>{{ movie.Genres }}</p>
-         </div>
-      </div>
-      {% endfor %}
-   </div>
-</div>
+<div class="wrapper">
+  <!-- <h4>Trending</h4> -->
+  <div class="MainContainer">
+     {% for movie in ChoseGenre %}
+     <div class="CardContainer">
+        <div class="Card">
+           <a href="{{ url_for('Movie', id=movie.ID) }}"> <img src="{{ movie.Image }}" alt=""></a>
+           <a href="{{ url_for('Movie', id = movie.ID) }}">
+             <p>{{ movie.Title }}</p>
+           </a>
+        </div>
+     </div>
+     {% endfor %}
+  </div>
 
 {% endblock %}

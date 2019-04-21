@@ -39,9 +39,17 @@ def Home():
 # Movies Page
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-@app.route('/Movies') # TODO
+@app.route('/Movies')
 def Movies():
-    return render_template('Movies.html', LoopMovies = MovieData()) # Running function to get movie data
+
+    Data = MovieData()
+
+    _allmovies = []
+
+    for i in range(len(Data)):
+        _allmovies.append(Data[i])
+
+    return render_template('Movies.html', LoopMovies = _allmovies) # Running function to get movie data
 
 
 # Series Page
