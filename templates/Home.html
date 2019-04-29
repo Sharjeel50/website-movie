@@ -15,12 +15,13 @@
      <div class="CardContainer">
         <div class="Card">
            <a href="{{ url_for('Movie', id=movie.ID) }}"> <img src="{{ movie.Image }}" alt=""></a>
-           <a href="{{ url_for('Movie', id = movie.ID) }}">
-             <p>{{ movie.Title }}</p>
-           </a>
         </div>
      </div>
      {% endfor %}
+
+    
+
+
   </div>
 
   <!-- <div class="newContainer">
