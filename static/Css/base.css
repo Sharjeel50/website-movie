@@ -4,7 +4,6 @@
   box-sizing: border-box;
 }
 
-
 nav {
   display: flex;
   justify-content: space-around;
@@ -19,7 +18,18 @@ nav {
   letter-spacing: 3px;
   font-size: 30px;
   text-decoration: none;]
+}
 
+.right {
+  padding-left: 700px;
+}
+
+.navbar-brand {
+  padding-left: 200px;
+}
+
+#navbarSupportedContent {
+  padding-left: 30px
 }
 
 .logo {

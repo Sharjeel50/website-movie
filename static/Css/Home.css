@@ -5,11 +5,8 @@ img {
 }
 
 .MainContainer {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-  width: 1000px;
+  width: 1400px;
   background-color: white;
-  padding: 5px;
   margin-right: 20px;
   margin-left: 200px;
   margin-top: 300px;
@@ -25,7 +22,10 @@ img {
 }
 
 .Card {
-  text-align: justify;
+  display: table;
+  float: left;
+  width: 16.66%;
+  padding: 5px;
 }
 
 .newContainer {
