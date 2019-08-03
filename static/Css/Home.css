@@ -1,31 +1,109 @@
-img {
-  display: block;
-  height: 70%;
-  width: 70%
-}
-
 .MainContainer {
-  width: 1400px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  width: 1200px;
   background-color: white;
+  padding: 5px;
   margin-right: 20px;
   margin-left: 200px;
-  margin-top: 300px;
+  margin-top: 100px
 }
 
-.Card a {
-  display: inline-block;
-  text-decoration: none;
+.Card {
+  float: left;
+  padding: 5px;
+  padding-right:2px;
+}
+
+.Card img {
+  height: 100%;
+  width: 75%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+.MainContainer {
+  width: 1400px;
+  background-color: lightgrey;
+ <!-- -right: 20px;
+  margin-left: 200px;
+  margin-top: 300px;
 }
 
 .MoviesContainer {
   border: black 1px solid;
 }
 
-.Card {
+#cardID {
   display: table;
   float: left;
-  width: 16.66%;
+
+
   padding: 5px;
+  border: 1px black solid;
+  img {
+      height: 70%;
+      width: 55%;
+    }
+
+
 }
 
 .newContainer {
@@ -43,3 +121,4 @@ img {
 .wrapper {
   background-color: white;
 }
+*/

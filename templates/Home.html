@@ -9,15 +9,16 @@
 
 {% block Body %}
 <div class="wrapper">
-  <!-- <h4>Trending</h4> -->
+  <div class="MovieContainer">
+  <h5>Trending Movies</h5>
   <div class="MainContainer">
      {% for movie in LoopMovies %}
-     <div class="CardContainer">
         <div class="Card">
-           <a href="{{ url_for('Movie', id=movie.ID) }}"> <img src="{{ movie.Image }}" alt=""></a>
+          <a href="{{ url_for('Movie', id=movie.ID) }}"> <img src="{{ movie.Image }}" alt=""></a>
         </div>
-     </div>
      {% endfor %}
   </div>
+  </div>
+</div>
 
 {% endblock %}

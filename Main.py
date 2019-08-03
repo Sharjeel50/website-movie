@@ -29,11 +29,16 @@ bootstrap = Bootstrap(app)
 @app.route('/')
 def Home():
     Data = MovieData()
-    testMovies = []
-    for i in range(50):
-        testMovies.append(Data[i])
 
-    return render_template('Home.html', LoopMovies = testMovies) # Running function to get movie data nad need to make sure i loop through series to display them too
+    Movies = []
+    HomePageData = {"Movies": Movies, "Shows": "pass"}
+
+    Shows = []
+
+    for i in range(21):
+        Movies.append(Data[i])
+
+    return render_template('Home.html', LoopMovies = Movies) # Running function to get movie data nad need to make sure i loop through series to display them too
 
 
 # Movies Page
@@ -46,7 +51,7 @@ def Movies():
 
     _allmovies = []
 
-    for i in range(len(Data)):
+    for i in range(len(30)):
         _allmovies.append(Data[i])
 
     return render_template('Movies.html', LoopMovies = _allmovies) # Running function to get movie data
